@@ -1,5 +1,5 @@
-string = "algoritmo aguacate albacora algoritmica algoritmo"
-pattern = "algoritmo"
+string = "algoritmo aguacate albacora algoritmica algoritmo 123549 0coco 255algoritmo 55662"
+pattern = "a"
 
 
 def get_shifts(string: str, pattern:str) -> list:
@@ -8,9 +8,9 @@ def get_shifts(string: str, pattern:str) -> list:
 
     concurr = []
     while x_1 < len(string):
-        for i in range(len(string[x_0:x_1])):
+        for i in range(len(pattern)):
             i += x_0
-            if string[i] == pattern[0] and string[i+1] == pattern[1]:
+            if string[i] == pattern[0]:
                 concurr.append(i)
         x_0 = x_1
         x_1 += len(pattern) 
