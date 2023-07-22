@@ -22,11 +22,11 @@ def matches(string:str, pattern:str) -> list:
     match_list = []
     for shift in shifts:
         is_equal = True
-        for i in range(1,len(pattern)):
-            if shift + i < len(string):
-                break
+        i = 0
+        while i < len(pattern) and shift + i < len(string):
             is_equal = is_equal and (pattern[i] == string[shift + i])
-        if is_equal:
+            i += 1
+        if is_equal and i == len(pattern):
             match_list.append(shift)
     return match_list
 
